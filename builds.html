@@ -27,8 +27,10 @@
                             red: '#E51D24',         /* Primary High-Octane Red */
                             redHover: '#B9141A',    /* Darker Hover Red */
                             crimson: '#8F0E14',     /* Secondary Deep Crimson */
-                            black: '#0A0B0E',
-                            darkCard: '#12141A',
+                            black: '#000000',       /* Pitch Black Primary Background */
+                            darkCard: '#111317',    /* Dark Grey for Alternate Sections & Cards */
+                            darkAlt: '#141215',     /* Subtle Primary Red Tinted Dark Grey */
+                            darkHighlight: '#1A0E10', /* Subtle Red-Glow Highlighted Section Background */
                             border: '#232733',
                             metal: '#1A1D26',
                             steel: '#8E95A5',
@@ -113,35 +115,46 @@
     </style>
 </head>
 
-<body class="bg-forge-lightBg dark:bg-forge-black text-gray-900 dark:text-gray-100 antialiased overflow-x-hidden transition-colors duration-300 selection:bg-forge-red selection:text-white flex flex-col min-h-screen">
+<body class="bg-forge-lightBg dark:bg-black text-gray-900 dark:text-gray-100 antialiased overflow-x-hidden transition-colors duration-300 selection:bg-forge-red selection:text-white flex flex-col min-h-screen">
 
     <!-- ========================================================= -->
     <!-- 1. MECHANICAL FLOATING NAVBAR                             -->
     <!-- ========================================================= -->
     <header class="sticky top-3 sm:top-4 z-50 w-full px-3 sm:px-6 lg:px-8">
-        <nav class="max-w-[1400px] mx-auto bg-white/95 dark:bg-forge-darkCard/90 backdrop-blur-xl border-2 border-gray-300 dark:border-forge-border shadow-2xl px-4 sm:px-6 py-3 transition-all">
-            <div class="flex items-center justify-between gap-4">
+        <nav class="max-w-[1400px] mx-auto bg-white/95 dark:bg-black/95 backdrop-blur-xl border-2 border-gray-300 dark:border-forge-border shadow-2xl px-3 sm:px-6 py-2.5 sm:py-3 transition-all">
+            <div class="flex items-center justify-between gap-2 lg:gap-3 xl:gap-6 min-w-0">
                 
                 <!-- Brand Identity -->
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 sm:w-11 sm:h-11 bg-forge-red flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle group-hover:scale-105 transition-transform">
-                        <svg class="w-6 h-6 transform skew-x-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 xl:w-11 xl:h-11 bg-gradient-to-br from-forge-red to-forge-crimson flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle group-hover:scale-105 transition-transform border border-white/20 shrink-0">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 transform skew-x-6" viewBox="0 0 24 24" fill="none">
+                            <!-- Crossed Con-Rods -->
+                            <path d="M4.5 19.5L19.5 4.5M19.5 19.5L4.5 4.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="4.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <circle cx="19.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <circle cx="4.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <circle cx="19.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <!-- Center Forged Piston & Anvil Base -->
+                            <path d="M7.5 6.5H16.5C17.05 6.5 17.5 6.95 17.5 7.5V14C17.5 15 16.5 16 15.5 16H14V19H17L18 20.5H6L7 19H10V16H8.5C7.5 16 6.5 15 6.5 14V7.5C6.5 6.95 6.95 6.5 7.5 6.5Z" fill="white"/>
+                            <!-- Piston Compression Ring Slots -->
+                            <line x1="6.5" y1="8.5" x2="17.5" y2="8.5" stroke="#E51D24" stroke-width="1.1"/>
+                            <line x1="6.5" y1="10.8" x2="17.5" y2="10.8" stroke="#E51D24" stroke-width="1.1"/>
+                            <!-- Wrist Pin Bore -->
+                            <circle cx="12" cy="13.5" r="1.7" fill="#E51D24"/>
                         </svg>
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-condensed font-black text-2xl sm:text-3xl tracking-wider text-gray-950 dark:text-white uppercase leading-none">IRONFORGE<span class="text-forge-red">.MOTO</span></span>
-                        <span class="font-code text-[10px] tracking-widest text-forge-steel uppercase -mt-0.5">CUSTOM BUILDS &amp; RESTORATION</span>
+                        <span class="font-condensed font-black text-xl sm:text-2xl xl:text-3xl tracking-wider text-gray-950 dark:text-white uppercase leading-none">IRONFORGE<span class="text-forge-red">.MOTO</span></span>
+                        <span class="font-code text-[9px] sm:text-[10px] tracking-widest text-forge-steel uppercase -mt-0.5 whitespace-nowrap">CUSTOM BUILDS &amp; RESTORATION</span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Links (Single-Word Names) -->
-                <div class="hidden lg:flex items-center gap-7 font-tech font-bold tracking-widest text-sm uppercase">
+                <div class="hidden lg:flex items-center gap-3.5 xl:gap-6 font-tech font-bold tracking-wider xl:tracking-widest text-xs xl:text-sm uppercase shrink-0">
                     
                     <!-- Home with Scrollbar Dropdown (Home-1 & Home-2) -->
-                    <div class="relative group py-2">
-                        <button class="flex items-center gap-1 text-forge-red hover:text-forge-redHover transition-colors focus:outline-none">
+                    <div class="relative group">
+                        <button class="h-9 flex items-center gap-1 px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors focus:outline-none">
                             <span>Home</span>
                             <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
@@ -149,7 +162,7 @@
                         </button>
                         
                         <!-- Dropdown Panel with Internal Red Scrollbar -->
-                        <div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="bg-white dark:bg-forge-darkCard border border-forge-lightBorder dark:border-forge-border shadow-xl p-2 max-h-36 overflow-y-auto custom-scroll">
                                 <a href="index.html" class="flex items-center justify-between px-3 py-2 text-xs text-gray-700 dark:text-gray-300 hover:bg-forge-red hover:text-white transition-colors">
                                     <span>Home-1</span>
@@ -163,31 +176,31 @@
                         </div>
                     </div>
 
-                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">About</a>
-                    <a href="builds.html" class="text-forge-red transition-colors">Builds</a>
-                    <a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Services</a>
-                    <a href="portfolio.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Portfolio</a>
-                    <a href="garage.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Garage</a>
-                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Contact</a>
+                    <a href="about.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">About</a>
+                    <a href="builds.html" class="h-9 flex items-center px-2.5 text-forge-red font-bold relative after:content-[''] after:absolute after:bottom-0 after:left-1 after:right-1 after:h-0.5 after:bg-forge-red transition-colors">Builds</a>
+                    <a href="services.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Services</a>
+                    <a href="portfolio.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Portfolio</a>
+                    <a href="garage.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Garage</a>
+                    <a href="contact.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Contact</a>
                 </div>
 
                 <!-- Right Action Cluster -->
-                <div class="flex items-center gap-3">
-                    <!-- RTL / LTR Toggle Button (Hidden on Mobile, Visible on Desktop) -->
-                    <button onclick="toggleRTL()" aria-label="Toggle Direction" class="rtl-toggle-btn hidden lg:flex w-9 h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors font-tech text-xs tracking-wider uppercase">
+                <div class="flex items-center gap-2 xl:gap-3 shrink-0">
+                    <!-- RTL / LTR Toggle Button -->
+                    <button onclick="toggleRTL()" aria-label="Toggle Direction" class="rtl-toggle-btn hidden lg:flex w-8 h-8 xl:w-9 xl:h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors font-tech text-xs tracking-wider uppercase">
                         RTL
                     </button>
 
-                    <!-- Dark / Light Mode Toggle (Hidden on Mobile, Visible on Desktop) -->
-                    <button onclick="toggleTheme()" aria-label="Toggle Theme" class="hidden lg:flex w-9 h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors">
+                    <!-- Dark / Light Mode Toggle -->
+                    <button onclick="toggleTheme()" aria-label="Toggle Theme" class="hidden lg:flex w-8 h-8 xl:w-9 xl:h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors">
                         <svg class="w-4 h-4 hidden dark:block text-forge-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                         <svg class="w-4 h-4 block dark:hidden text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                     </button>
 
-                    <!-- Action Button (Hidden on Mobile, Visible on Desktop) -->
-                    <a href="contact.html" class="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 bg-forge-red hover:bg-forge-redHover text-white font-tech font-bold text-sm tracking-wider uppercase chamfer-btn transition-transform shadow-neon-subtle hover:-translate-y-0.5">
+                    <!-- Action Button -->
+                    <a href="contact.html" class="hidden lg:inline-flex items-center gap-1.5 xl:gap-2 px-3 xl:px-5 py-2 xl:py-2.5 bg-forge-red hover:bg-forge-redHover text-white font-tech font-bold text-xs xl:text-sm tracking-wider uppercase chamfer-btn transition-transform shadow-neon-subtle hover:-translate-y-0.5 whitespace-nowrap shrink-0">
                         <span>ENQUIRE</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-3.5 h-3.5 xl:w-4 xl:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
 
                     <!-- Mobile Hamburger Button -->
@@ -202,7 +215,7 @@
                 
                 <!-- Home Section with Scrollbar for Home-1 & Home-2 -->
                 <div class="py-2 border-b border-gray-200 dark:border-forge-border/40">
-                    <div class="text-forge-red font-bold flex items-center justify-between mb-1.5">
+                    <div class="text-gray-900 dark:text-gray-300 font-bold flex items-center justify-between mb-1.5">
                         <span>Home</span>
                         <span class="text-xs text-gray-600 dark:text-forge-steel font-code">VARIANTS</span>
                     </div>
@@ -222,7 +235,7 @@
                 
                 <!-- Dark Legible Links in Light Mode, Clean Gray in Dark Mode -->
                 <a href="about.html" class="py-2.5 text-gray-900 dark:text-gray-300 hover:text-forge-red transition-colors">About</a>
-                <a href="builds.html" class="py-2.5 text-forge-red font-bold transition-colors">Builds</a>
+                <a href="builds.html" class="py-2.5 text-forge-red font-bold border-l-2 border-forge-red pl-2.5 bg-forge-red/10 transition-colors">Builds</a>
                 <a href="services.html" class="py-2.5 text-gray-900 dark:text-gray-300 hover:text-forge-red transition-colors">Services</a>
                 <a href="portfolio.html" class="py-2.5 text-gray-900 dark:text-gray-300 hover:text-forge-red transition-colors">Portfolio</a>
                 <a href="garage.html" class="py-2.5 text-gray-900 dark:text-gray-300 hover:text-forge-red transition-colors">Garage</a>
@@ -334,87 +347,103 @@
                         </h2>
                     </div>
                     <p class="font-inter text-sm sm:text-base text-gray-600 dark:text-forge-steel max-w-lg leading-relaxed">
-                        Every commission belongs to a defined performance category. We engineer specific rake angles, swingarm lengths, and center-of-gravity placements for each riding objective[cite: 1, 2].
+                        Every commission belongs to a defined performance category. We engineer specific rake angles, swingarm lengths, and center-of-gravity placements for each riding objective.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
                     <!-- Class 01 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-6 flex flex-col justify-between hover:border-forge-red transition-all shadow-lg group">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-5 flex flex-col justify-between hover:border-forge-red transition-all shadow-lg group">
                         <div>
-                            <div class="flex items-center justify-between pb-3 mb-4 border-b border-forge-lightBorder dark:border-forge-border font-code text-xs text-forge-steel">
+                            <div class="relative overflow-hidden aspect-[16/10] mb-4 border border-forge-lightBorder dark:border-forge-border">
+                                <img src="img/build-bmw-r100.jpg" alt="Proto Cafe Racer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-2 left-2 bg-forge-red text-white font-code text-[10px] px-2 py-0.5 uppercase tracking-wider">APEX // CAFE</span>
+                            </div>
+                            <div class="flex items-center justify-between pb-2 mb-3 border-b border-forge-lightBorder dark:border-forge-border font-code text-xs text-forge-steel">
                                 <span class="text-forge-red font-bold">SERIES // APEX</span>
                                 <span>RAKE: 23.5&deg;</span>
                             </div>
-                            <h3 class="font-tech font-bold text-2xl uppercase tracking-wider text-gray-950 dark:text-white mb-2">
+                            <h3 class="font-tech font-bold text-xl uppercase tracking-wider text-gray-950 dark:text-white mb-2">
                                 PROTO CAFE RACER
                             </h3>
-                            <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                                Aggressive clip-on posture, tucked rearset geometry, hand-hammered aluminum alloy tank, and modern inverted forks tuned for pure canyon velocity[cite: 1, 2].
+                            <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                                Aggressive clip-on posture, tucked rearset geometry, hand-hammered aluminum alloy tank, and modern inverted forks tuned for pure canyon velocity.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-forge-lightBorder dark:border-forge-border font-code text-[11px] flex justify-between items-center text-forge-steel">
+                        <div class="pt-3 border-t border-forge-lightBorder dark:border-forge-border font-code text-[11px] flex justify-between items-center text-forge-steel">
                             <span>DONOR ROSTER:</span>
                             <strong class="text-gray-900 dark:text-white">HONDA CB &bull; BMW R-SERIES</strong>
                         </div>
                     </div>
 
                     <!-- Class 02 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-6 flex flex-col justify-between hover:border-forge-red transition-all shadow-lg group">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-5 flex flex-col justify-between hover:border-forge-red transition-all shadow-lg group">
                         <div>
-                            <div class="flex items-center justify-between pb-3 mb-4 border-b border-forge-lightBorder dark:border-forge-border font-code text-xs text-forge-steel">
+                            <div class="relative overflow-hidden aspect-[16/10] mb-4 border border-forge-lightBorder dark:border-forge-border">
+                                <img src="img/build-yamaha-xt500.jpg" alt="Desert Scrambler" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-2 left-2 bg-forge-red text-white font-code text-[10px] px-2 py-0.5 uppercase tracking-wider">BAJA // DUAL</span>
+                            </div>
+                            <div class="flex items-center justify-between pb-2 mb-3 border-b border-forge-lightBorder dark:border-forge-border font-code text-xs text-forge-steel">
                                 <span class="text-forge-red font-bold">SERIES // BAJA</span>
                                 <span>TRAVEL: 240MM</span>
                             </div>
-                            <h3 class="font-tech font-bold text-2xl uppercase tracking-wider text-gray-950 dark:text-white mb-2">
+                            <h3 class="font-tech font-bold text-xl uppercase tracking-wider text-gray-950 dark:text-white mb-2">
                                 DESERT SCRAMBLER
                             </h3>
-                            <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                                Reinforced 4130 chromoly backbone, high-clearance hand-bent stainless exhaust, long-travel Öhlins suspension, and reinforced spoked wheels[cite: 1, 2].
+                            <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                                Reinforced 4130 chromoly backbone, high-clearance hand-bent stainless exhaust, long-travel &Ouml;hlins suspension, and reinforced spoked wheels.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-forge-lightBorder dark:border-forge-border font-code text-[11px] flex justify-between items-center text-forge-steel">
+                        <div class="pt-3 border-t border-forge-lightBorder dark:border-forge-border font-code text-[11px] flex justify-between items-center text-forge-steel">
                             <span>DONOR ROSTER:</span>
                             <strong class="text-gray-900 dark:text-white">YAMAHA XT &bull; TRIUMPH TWIN</strong>
                         </div>
                     </div>
 
                     <!-- Class 03 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-6 flex flex-col justify-between hover:border-forge-red transition-all shadow-lg group">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-5 flex flex-col justify-between hover:border-forge-red transition-all shadow-lg group">
                         <div>
-                            <div class="flex items-center justify-between pb-3 mb-4 border-b border-forge-lightBorder dark:border-forge-border font-code text-xs text-forge-steel">
+                            <div class="relative overflow-hidden aspect-[16/10] mb-4 border border-forge-lightBorder dark:border-forge-border">
+                                <img src="img/build-sportster-bobber.jpg" alt="Street Tracker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-2 left-2 bg-forge-red text-white font-code text-[10px] px-2 py-0.5 uppercase tracking-wider">OVAL // TRACK</span>
+                            </div>
+                            <div class="flex items-center justify-between pb-2 mb-3 border-b border-forge-lightBorder dark:border-forge-border font-code text-xs text-forge-steel">
                                 <span class="text-forge-red font-bold">SERIES // OVAL</span>
                                 <span>WHEELS: 19" DUAL</span>
                             </div>
-                            <h3 class="font-tech font-bold text-2xl uppercase tracking-wider text-gray-950 dark:text-white mb-2">
+                            <h3 class="font-tech font-bold text-xl uppercase tracking-wider text-gray-950 dark:text-white mb-2">
                                 STREET TRACKER
                             </h3>
-                            <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                                Wide flat-track bars, ultra-narrow alloy tank profile, minimal fiberglass or alloy tail section, and massive mid-range torque delivery[cite: 1, 2].
+                            <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                                Wide flat-track bars, ultra-narrow alloy tank profile, minimal fiberglass or alloy tail section, and massive mid-range torque delivery.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-forge-lightBorder dark:border-forge-border font-code text-[11px] flex justify-between items-center text-forge-steel">
+                        <div class="pt-3 border-t border-forge-lightBorder dark:border-forge-border font-code text-[11px] flex justify-between items-center text-forge-steel">
                             <span>DONOR ROSTER:</span>
                             <strong class="text-gray-900 dark:text-white">HARLEY SPORTSTER &bull; XS650</strong>
                         </div>
                     </div>
 
                     <!-- Class 04 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-6 flex flex-col justify-between hover:border-forge-red transition-all shadow-lg group">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-5 flex flex-col justify-between hover:border-forge-red transition-all shadow-lg group">
                         <div>
-                            <div class="flex items-center justify-between pb-3 mb-4 border-b border-forge-lightBorder dark:border-forge-border font-code text-xs text-forge-steel">
+                            <div class="relative overflow-hidden aspect-[16/10] mb-4 border border-forge-lightBorder dark:border-forge-border">
+                                <img src="img/build-ducati-900ss.jpg" alt="Museum Restoration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-2 left-2 bg-forge-red text-white font-code text-[10px] px-2 py-0.5 uppercase tracking-wider">VINTAGE 100%</span>
+                            </div>
+                            <div class="flex items-center justify-between pb-2 mb-3 border-b border-forge-lightBorder dark:border-forge-border font-code text-xs text-forge-steel">
                                 <span class="text-forge-red font-bold">SERIES // CONCOURS</span>
                                 <span>FACTORY 100%</span>
                             </div>
-                            <h3 class="font-tech font-bold text-2xl uppercase tracking-wider text-gray-950 dark:text-white mb-2">
+                            <h3 class="font-tech font-bold text-xl uppercase tracking-wider text-gray-950 dark:text-white mb-2">
                                 MUSEUM RESTORATION
                             </h3>
-                            <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                                Period-correct engine blueprint overhaul, rare NOS part location, vapor-blasted casting finishes, and hand-rubbed nitrocellulose lacquer[cite: 1, 2].
+                            <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                                Period-correct engine blueprint overhaul, rare NOS part location, vapor-blasted casting finishes, and hand-rubbed nitrocellulose lacquer.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-forge-lightBorder dark:border-forge-border font-code text-[11px] flex justify-between items-center text-forge-steel">
+                        <div class="pt-3 border-t border-forge-lightBorder dark:border-forge-border font-code text-[11px] flex justify-between items-center text-forge-steel">
                             <span>DONOR ROSTER:</span>
                             <strong class="text-gray-900 dark:text-white">DUCATI BEVEL &bull; NORTON &bull; MV</strong>
                         </div>
@@ -427,10 +456,10 @@
         <!-- ========================================================= -->
         <!-- NEW SECTION 2: FLAGSHIP PROTOTYPE DEEP-DIVE SHOWCASE      -->
         <!-- ========================================================= -->
-        <section class="py-16 sm:py-24 border-b border-forge-lightBorder dark:border-forge-border industrial-grid">
+        <section class="py-16 sm:py-24 border-b border-forge-red/30 dark:border-forge-red/30 bg-white dark:bg-forge-darkHighlight industrial-grid">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="bg-white dark:bg-forge-darkCard border-2 border-forge-lightBorder dark:border-forge-border p-6 sm:p-10 shadow-2xl relative">
+                <div class="bg-white dark:bg-black/90 border-2 border-forge-red/50 shadow-neon-subtle p-6 sm:p-10 relative">
                     
                     <!-- Top Telemetry Header -->
                     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 mb-8 border-b border-forge-lightBorder dark:border-forge-border gap-2 font-code text-xs">
@@ -438,43 +467,43 @@
                             <span class="w-3 h-3 bg-forge-red animate-ping rounded-full"></span>
                             <span class="font-bold uppercase tracking-widest text-gray-900 dark:text-white">SKUNKWORKS SHOWCASE: PROTO #029 "VALKYRIE"</span>
                         </div>
-                        <span class="text-forge-red font-bold">STATUS: DYNO CERTIFIED &bull; STREET LEGAL[cite: 1]</span>
+                        <span class="text-forge-red font-bold bg-forge-red/10 border border-forge-red/30 px-3 py-1">STATUS: DYNO CERTIFIED &bull; STREET LEGAL</span>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                         
                         <!-- Left Image Display (7 cols) -->
-                        <div class="lg:col-span-7 relative overflow-hidden group border border-forge-lightBorder dark:border-forge-border">
-                            <img src="https://images.unsplash.com/photo-1558980664-3a031cf67ea8?auto=format&fit=crop&w=1200&q=80" 
-                                 alt="Featured Ironforge Custom Motorcycle" 
+                        <div class="lg:col-span-7 relative overflow-hidden group border-2 border-forge-border shadow-2xl">
+                            <img src="img/build-cb750-silver-arrow.jpg" 
+                                 alt="Featured Ironforge Custom CBX 6-Cylinder Motorcycle" 
                                  class="w-full h-[380px] sm:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-forge-black via-forge-black/20 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                             
                             <!-- Floating Spec Tag -->
-                            <div class="absolute bottom-4 left-4 right-4 bg-forge-black/85 backdrop-blur-md p-4 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-white">
+                            <div class="absolute bottom-4 left-4 right-4 bg-black/85 backdrop-blur-md p-4 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-white">
                                 <div>
                                     <span class="text-[10px] font-code text-forge-steel uppercase block">CHASSIS SPECIFICATION</span>
                                     <h4 class="font-condensed font-black text-2xl uppercase">1979 HONDA CBX 1047CC 6-CYLINDER</h4>
                                 </div>
-                                <span class="bg-forge-red px-3 py-1 font-tech font-bold text-xs uppercase tracking-wider">128 WHEEL HP[cite: 3]</span>
+                                <span class="bg-forge-red px-3 py-1 font-tech font-bold text-xs uppercase tracking-wider">128 WHEEL HP &bull; 85 FT-LBS</span>
                             </div>
                         </div>
 
                         <!-- Right Detailed Specs (5 cols) -->
                         <div class="lg:col-span-5 flex flex-col">
-                            <span class="font-code text-xs text-forge-red uppercase tracking-widest mb-1">// ANATOMY OF A SUPERBUILD</span>
+                            <span class="font-code text-xs text-forge-red uppercase tracking-widest mb-1">// ANATOMY OF A SUPERBIKE</span>
                             <h3 class="font-condensed font-black text-3xl sm:text-5xl uppercase text-gray-950 dark:text-white leading-tight mb-4">
                                 SIX PIPES. <br><span class="text-forge-red">ONE SYMPHONY.</span>
                             </h3>
                             <p class="font-inter text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                                Sourced from an unrestored inline-six barn find, the engine was torn down, vapor-blasted, and reassembled with Carrillo forged rods and CR racing carbs[cite: 1, 2]. We shaped a custom 4130 tubular cradle chassis around the powerplant to eliminate factory frame flex[cite: 1, 2].
+                                Sourced from an unrestored inline-six barn find, the engine was torn down to bare castings, vapor-blasted, and reassembled with Carrillo forged rods, high-compression pistons, and six Keihin CR racing smoothbore carbs. We shaped a custom 4130 tubular cradle chassis around the powerplant to eliminate factory frame flex and achieve razor-sharp roadholding.
                             </p>
 
                             <!-- Spec List -->
                             <div class="space-y-3 font-code text-xs">
                                 <div class="p-3 bg-forge-lightBg dark:bg-forge-metal border border-forge-lightBorder dark:border-forge-border flex justify-between items-center">
                                     <span class="text-forge-steel">EXHAUST SYSTEM</span>
-                                    <strong class="text-gray-900 dark:text-white">TITANIUM 6-INTO-1 PIE CUT[cite: 1, 3]</strong>
+                                    <strong class="text-gray-900 dark:text-white">TITANIUM 6-INTO-6 PIE CUT</strong>
                                 </div>
                                 <div class="p-3 bg-forge-lightBg dark:bg-forge-metal border border-forge-lightBorder dark:border-forge-border flex justify-between items-center">
                                     <span class="text-forge-steel">SUSPENSION</span>
@@ -482,15 +511,35 @@
                                 </div>
                                 <div class="p-3 bg-forge-lightBg dark:bg-forge-metal border border-forge-lightBorder dark:border-forge-border flex justify-between items-center">
                                     <span class="text-forge-steel">TOTAL WEIGHT REDUCTION</span>
-                                    <strong class="text-forge-red font-bold">-76 LBS OFF DRY STOCK[cite: 1]</strong>
+                                    <strong class="text-forge-red font-bold">-76 LBS (392 LBS DRY WEIGHT)</strong>
                                 </div>
                                 <div class="p-3 bg-forge-lightBg dark:bg-forge-metal border border-forge-lightBorder dark:border-forge-border flex justify-between items-center">
                                     <span class="text-forge-steel">WIRING &amp; ECU</span>
-                                    <strong class="text-gray-900 dark:text-white">MOTOGADGET MO.UNIT BLUE[cite: 1, 2]</strong>
+                                    <strong class="text-gray-900 dark:text-white">MOTOGADGET MO.UNIT BLUE</strong>
                                 </div>
                             </div>
                         </div>
 
+                    </div>
+
+                    <!-- Component Telemetry Spec Bar -->
+                    <div class="mt-8 pt-6 border-t border-forge-lightBorder dark:border-forge-border grid grid-cols-2 md:grid-cols-4 gap-4 font-code text-xs">
+                        <div class="p-3 bg-forge-lightBg dark:bg-forge-metal/60 border border-forge-lightBorder dark:border-forge-border">
+                            <span class="text-forge-steel block text-[10px]">POWERTRAIN</span>
+                            <strong class="text-gray-900 dark:text-white">1047cc DOHC 24-Valve I-6</strong>
+                        </div>
+                        <div class="p-3 bg-forge-lightBg dark:bg-forge-metal/60 border border-forge-lightBorder dark:border-forge-border">
+                            <span class="text-forge-steel block text-[10px]">INDUCTION</span>
+                            <strong class="text-gray-900 dark:text-white">6x Keihin CR Velocity Stacks</strong>
+                        </div>
+                        <div class="p-3 bg-forge-lightBg dark:bg-forge-metal/60 border border-forge-lightBorder dark:border-forge-border">
+                            <span class="text-forge-steel block text-[10px]">FRONT BRAKES</span>
+                            <strong class="text-gray-900 dark:text-white">Brembo GP4-RX Billet Radial</strong>
+                        </div>
+                        <div class="p-3 bg-forge-lightBg dark:bg-forge-metal/60 border border-forge-lightBorder dark:border-forge-border">
+                            <span class="text-forge-steel block text-[10px]">TOP SPEED</span>
+                            <strong class="text-forge-red">155+ MPH Dyno Proven</strong>
+                        </div>
                     </div>
 
                 </div>
@@ -500,7 +549,7 @@
         <!-- ========================================================= -->
         <!-- NEW SECTION 3: CHASSIS & POWER TELEMETRY COMPARISON       -->
         <!-- ========================================================= -->
-        <section class="py-16 sm:py-24 border-b border-forge-lightBorder dark:border-forge-border bg-white dark:bg-forge-darkCard">
+        <section class="py-16 sm:py-24 border-b border-forge-lightBorder dark:border-forge-border bg-white dark:bg-black">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-14">
@@ -509,28 +558,31 @@
                         CHASSIS &amp; POWER <span class="text-forge-red">BENCH MATRIX.</span>
                     </h2>
                     <p class="font-inter text-sm sm:text-base text-gray-600 dark:text-forge-steel mt-4">
-                        All horsepower and torque figures are calculated on our Dynojet 250i eddy-current chassis dynamometer, not calculated crank estimates[cite: 1, 2].
+                        All horsepower and torque figures are calculated on our Dynojet 250i eddy-current chassis dynamometer, not calculated crank estimates.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     
                     <!-- Machine Matrix 1 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border p-6 bg-forge-lightBg dark:bg-forge-metal/40 flex flex-col justify-between hover:border-forge-red transition-all">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border p-6 bg-forge-lightBg dark:bg-forge-darkCard flex flex-col justify-between hover:border-forge-red transition-all group">
                         <div>
+                            <div class="aspect-[16/10] overflow-hidden mb-4 border border-forge-lightBorder dark:border-forge-border">
+                                <img src="img/build-cb750-silver-arrow.jpg" alt="Scarlet CB750" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
                             <div class="flex items-center justify-between text-xs font-code text-forge-steel pb-3 mb-4 border-b border-forge-lightBorder dark:border-forge-border">
                                 <span>#CR-836</span>
-                                <span class="text-forge-red font-bold">DYNO TUNED[cite: 1]</span>
+                                <span class="text-forge-red font-bold">DYNO TUNED</span>
                             </div>
                             <h3 class="font-condensed font-black text-3xl uppercase text-gray-950 dark:text-white mb-1">
                                 SCARLET CB750
                             </h3>
-                            <p class="font-code text-xs text-forge-steel mb-6">FOUR-CYLINDER BIG BORE[cite: 1]</p>
+                            <p class="font-code text-xs text-forge-steel mb-6">FOUR-CYLINDER BIG BORE</p>
 
                             <div class="space-y-3 font-code text-xs">
                                 <div class="flex justify-between py-1.5 border-b border-forge-lightBorder dark:border-forge-border/60">
                                     <span class="text-forge-steel">PEAK POWER:</span>
-                                    <strong class="text-gray-900 dark:text-white">91 WHP @ 8,800 RPM[cite: 1]</strong>
+                                    <strong class="text-gray-900 dark:text-white">91 WHP @ 8,800 RPM</strong>
                                 </div>
                                 <div class="flex justify-between py-1.5 border-b border-forge-lightBorder dark:border-forge-border/60">
                                     <span class="text-forge-steel">TORQUE:</span>
@@ -538,11 +590,11 @@
                                 </div>
                                 <div class="flex justify-between py-1.5 border-b border-forge-lightBorder dark:border-forge-border/60">
                                     <span class="text-forge-steel">DRY WEIGHT:</span>
-                                    <strong class="text-forge-red font-bold">398 LBS (-52 LBS)[cite: 1]</strong>
+                                    <strong class="text-forge-red font-bold">398 LBS (-52 LBS)</strong>
                                 </div>
                                 <div class="flex justify-between py-1.5">
                                     <span class="text-forge-steel">CHASSIS:</span>
-                                    <strong class="text-gray-900 dark:text-white">4130 CHROMOLY REAR LOOP[cite: 1, 2]</strong>
+                                    <strong class="text-gray-900 dark:text-white">4130 CHROMOLY REAR LOOP</strong>
                                 </div>
                             </div>
                         </div>
@@ -554,14 +606,17 @@
                     </div>
 
                     <!-- Machine Matrix 2 (Highlighted) -->
-                    <div class="border-2 border-forge-red p-6 bg-white dark:bg-forge-darkCard flex flex-col justify-between shadow-neon-subtle relative hover:shadow-neon-red transition-all">
+                    <div class="border-2 border-forge-red p-6 bg-white dark:bg-forge-darkHighlight flex flex-col justify-between shadow-neon-subtle relative hover:shadow-neon-red transition-all group">
                         <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-forge-red text-white font-tech font-bold text-[10px] uppercase tracking-widest px-3 py-0.5 chamfer-btn">
-                            APEX PERFORMER[cite: 3]
+                            APEX PERFORMER
                         </div>
                         <div>
+                            <div class="aspect-[16/10] overflow-hidden mb-4 border border-forge-red/30">
+                                <img src="img/build-bmw-r100.jpg" alt="Night Hawk R100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
                             <div class="flex items-center justify-between text-xs font-code text-forge-steel pb-3 mb-4 border-b border-forge-lightBorder dark:border-forge-border">
                                 <span>#BMW-R100</span>
-                                <span class="text-forge-red font-bold">DYNO TUNED[cite: 1]</span>
+                                <span class="text-forge-red font-bold">DYNO TUNED</span>
                             </div>
                             <h3 class="font-condensed font-black text-3xl uppercase text-gray-950 dark:text-white mb-1">
                                 NIGHT HAWK R100
@@ -583,7 +638,7 @@
                                 </div>
                                 <div class="flex justify-between py-1.5">
                                     <span class="text-forge-steel">CHASSIS:</span>
-                                    <strong class="text-gray-900 dark:text-white">MONOSHOCK CNC SUBFRAME[cite: 1, 2]</strong>
+                                    <strong class="text-gray-900 dark:text-white">MONOSHOCK CNC SUBFRAME</strong>
                                 </div>
                             </div>
                         </div>
@@ -595,11 +650,14 @@
                     </div>
 
                     <!-- Machine Matrix 3 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border p-6 bg-forge-lightBg dark:bg-forge-metal/40 flex flex-col justify-between hover:border-forge-red transition-all">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border p-6 bg-forge-lightBg dark:bg-forge-darkCard flex flex-col justify-between hover:border-forge-red transition-all group">
                         <div>
+                            <div class="aspect-[16/10] overflow-hidden mb-4 border border-forge-lightBorder dark:border-forge-border">
+                                <img src="img/build-yamaha-xt500.jpg" alt="Desert Cobra XT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
                             <div class="flex items-center justify-between text-xs font-code text-forge-steel pb-3 mb-4 border-b border-forge-lightBorder dark:border-forge-border">
                                 <span>#XT-540</span>
-                                <span class="text-forge-red font-bold">DYNO TUNED[cite: 1]</span>
+                                <span class="text-forge-red font-bold">DYNO TUNED</span>
                             </div>
                             <h3 class="font-condensed font-black text-3xl uppercase text-gray-950 dark:text-white mb-1">
                                 DESERT COBRA XT
@@ -639,7 +697,7 @@
         <!-- ========================================================= -->
         <!-- NEW SECTION 4: MODULAR ARCHITECTURE & COMPONENT SPECS     -->
         <!-- ========================================================= -->
-        <section class="py-16 sm:py-24 border-b border-forge-lightBorder dark:border-forge-border industrial-grid">
+        <section class="py-16 sm:py-24 border-b border-forge-lightBorder dark:border-forge-border bg-white dark:bg-forge-darkCard industrial-grid">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -657,7 +715,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
                     <!-- Comp 1 -->
-                    <div class="bg-white dark:bg-forge-darkCard border-2 border-forge-lightBorder dark:border-forge-border p-6 hover:border-forge-red transition-all">
+                    <div class="bg-white dark:bg-black border-2 border-forge-lightBorder dark:border-forge-border p-6 hover:border-forge-red transition-all">
                         <div class="w-10 h-10 bg-forge-red text-white flex items-center justify-center font-bold text-base mb-4 chamfer-btn">
                             01
                         </div>
@@ -671,7 +729,7 @@
                     </div>
 
                     <!-- Comp 2 -->
-                    <div class="bg-white dark:bg-forge-darkCard border-2 border-forge-lightBorder dark:border-forge-border p-6 hover:border-forge-red transition-all">
+                    <div class="bg-white dark:bg-black border-2 border-forge-lightBorder dark:border-forge-border p-6 hover:border-forge-red transition-all">
                         <div class="w-10 h-10 bg-forge-red text-white flex items-center justify-center font-bold text-base mb-4 chamfer-btn">
                             02
                         </div>
@@ -679,13 +737,13 @@
                             KEIHIN CR RACING CARBS
                         </h4>
                         <p class="font-inter text-xs text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                            Smoothbore round-slide carburetors with velocity stacks, optimized on our dyno across throttle positions from pilot jets to wide-open main needles[cite: 1, 2].
+                            Smoothbore round-slide carburetors with velocity stacks, optimized on our dyno across throttle positions from pilot jets to wide-open main needles.
                         </p>
-                        <span class="font-code text-[11px] text-forge-steel uppercase block">TUNED WITH WIDEBAND LAMBDA[cite: 1, 2]</span>
+                        <span class="font-code text-[11px] text-forge-steel uppercase block">TUNED WITH WIDEBAND LAMBDA</span>
                     </div>
 
                     <!-- Comp 3 -->
-                    <div class="bg-white dark:bg-forge-darkCard border-2 border-forge-lightBorder dark:border-forge-border p-6 hover:border-forge-red transition-all">
+                    <div class="bg-white dark:bg-black border-2 border-forge-lightBorder dark:border-forge-border p-6 hover:border-forge-red transition-all">
                         <div class="w-10 h-10 bg-forge-red text-white flex items-center justify-center font-bold text-base mb-4 chamfer-btn">
                             03
                         </div>
@@ -693,13 +751,13 @@
                             MOTOGADGET ECOSYSTEM
                         </h4>
                         <p class="font-inter text-xs text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                            mo.unit Blue power controllers with Bluetooth ignition, mo.blaze disc bar-end blinkers, and motoscope mini digital readouts embedded into yokes[cite: 1, 2].
+                            mo.unit Blue power controllers with Bluetooth ignition, mo.blaze disc bar-end blinkers, and motoscope mini digital readouts embedded into yokes.
                         </p>
-                        <span class="font-code text-[11px] text-forge-steel uppercase block">RAYCHEM MIL-SPEC LOOMS[cite: 1, 2]</span>
+                        <span class="font-code text-[11px] text-forge-steel uppercase block">RAYCHEM MIL-SPEC LOOMS</span>
                     </div>
 
                     <!-- Comp 4 -->
-                    <div class="bg-white dark:bg-forge-darkCard border-2 border-forge-lightBorder dark:border-forge-border p-6 hover:border-forge-red transition-all">
+                    <div class="bg-white dark:bg-black border-2 border-forge-lightBorder dark:border-forge-border p-6 hover:border-forge-red transition-all">
                         <div class="w-10 h-10 bg-forge-red text-white flex items-center justify-center font-bold text-base mb-4 chamfer-btn">
                             04
                         </div>
@@ -707,9 +765,9 @@
                             PIE-CUT TITANIUM
                         </h4>
                         <p class="font-inter text-xs text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                            Back-purged Grade 1 titanium welded pie cuts with hand-turned internal cones, generating distinct high-RPM exhaust acoustics and zero corrosion[cite: 1, 2].
+                            Back-purged Grade 1 titanium welded pie cuts with hand-turned internal cones, generating distinct high-RPM exhaust acoustics and zero corrosion.
                         </p>
-                        <span class="font-code text-[11px] text-forge-steel uppercase block">HANDMADE IN OUR SHOP BAYS[cite: 1, 2]</span>
+                        <span class="font-code text-[11px] text-forge-steel uppercase block">HANDMADE IN OUR SHOP BAYS</span>
                     </div>
 
                 </div>
@@ -719,7 +777,7 @@
         <!-- ========================================================= -->
         <!-- NEW SECTION 5: SKUNKWORKS ACTIVE BAY QUEUE (LIVE STATUS)  -->
         <!-- ========================================================= -->
-        <section class="py-16 sm:py-24 border-b border-forge-lightBorder dark:border-forge-border bg-white dark:bg-forge-darkCard">
+        <section class="py-16 sm:py-24 border-b border-forge-lightBorder dark:border-forge-border bg-white dark:bg-black">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
@@ -737,7 +795,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
                     <!-- Bay 1 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-5 flex flex-col justify-between">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-darkCard p-5 flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-center font-code text-xs pb-3 mb-3 border-b border-forge-lightBorder dark:border-forge-border">
                                 <span class="text-forge-red font-bold">BAY // 01</span>
@@ -751,12 +809,12 @@
                                     <span>PROGRESS: STAGE 3</span>
                                     <span class="text-forge-red font-bold">75%</span>
                                 </div>
-                                <div class="w-full bg-gray-300 dark:bg-forge-darkCard h-1.5">
+                                <div class="w-full bg-gray-300 dark:bg-forge-metal h-1.5">
                                     <div class="bg-forge-red h-1.5 w-3/4"></div>
                                 </div>
                             </div>
                             <p class="font-inter text-xs text-gray-600 dark:text-gray-400">
-                                Fuel tank alloy beatings complete. Installing Raychem DR-25 wiring harness and Motogadget unit[cite: 1, 2].
+                                Fuel tank alloy beatings complete. Installing Raychem DR-25 wiring harness and Motogadget unit.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-forge-lightBorder dark:border-forge-border mt-4 font-code text-[10px] text-forge-steel">
@@ -765,7 +823,7 @@
                     </div>
 
                     <!-- Bay 2 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-5 flex flex-col justify-between">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-darkCard p-5 flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-center font-code text-xs pb-3 mb-3 border-b border-forge-lightBorder dark:border-forge-border">
                                 <span class="text-forge-red font-bold">BAY // 02</span>
@@ -779,12 +837,12 @@
                                     <span>PROGRESS: STAGE 2</span>
                                     <span class="text-forge-red font-bold">40%</span>
                                 </div>
-                                <div class="w-full bg-gray-300 dark:bg-forge-darkCard h-1.5">
+                                <div class="w-full bg-gray-300 dark:bg-forge-metal h-1.5">
                                     <div class="bg-forge-red h-1.5 w-2/5"></div>
                                 </div>
                             </div>
                             <p class="font-inter text-xs text-gray-600 dark:text-gray-400">
-                                Isolastic engine mounts machined. Crankcase split and vapor-blasted for cylinder sleeve bore out[cite: 1, 2].
+                                Isolastic engine mounts machined. Crankcase split and vapor-blasted for cylinder sleeve bore out.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-forge-lightBorder dark:border-forge-border mt-4 font-code text-[10px] text-forge-steel">
@@ -793,7 +851,7 @@
                     </div>
 
                     <!-- Bay 3 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-5 flex flex-col justify-between">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-darkCard p-5 flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-center font-code text-xs pb-3 mb-3 border-b border-forge-lightBorder dark:border-forge-border">
                                 <span class="text-forge-red font-bold">BAY // 03</span>
@@ -807,12 +865,12 @@
                                     <span>PROGRESS: STAGE 4</span>
                                     <span class="text-forge-red font-bold">92%</span>
                                 </div>
-                                <div class="w-full bg-gray-300 dark:bg-forge-darkCard h-1.5">
+                                <div class="w-full bg-gray-300 dark:bg-forge-metal h-1.5">
                                     <div class="bg-forge-red h-1.5 w-[92%]"></div>
                                 </div>
                             </div>
                             <p class="font-inter text-xs text-gray-600 dark:text-gray-400">
-                                Final shakedown tuning on Dynojet bench. Dell'Orto carb sync complete across RPM sweeps[cite: 1, 2].
+                                Final shakedown tuning on Dynojet bench. Dell'Orto carb sync complete across RPM sweeps.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-forge-lightBorder dark:border-forge-border mt-4 font-code text-[10px] text-forge-steel">
@@ -821,7 +879,7 @@
                     </div>
 
                     <!-- Bay 4 -->
-                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-metal/40 p-5 flex flex-col justify-between">
+                    <div class="border-2 border-forge-lightBorder dark:border-forge-border bg-forge-lightBg dark:bg-forge-darkCard p-5 flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-center font-code text-xs pb-3 mb-3 border-b border-forge-lightBorder dark:border-forge-border">
                                 <span class="text-forge-red font-bold">BAY // 04</span>
@@ -835,12 +893,12 @@
                                     <span>PROGRESS: STAGE 1</span>
                                     <span class="text-forge-red font-bold">20%</span>
                                 </div>
-                                <div class="w-full bg-gray-300 dark:bg-forge-darkCard h-1.5">
+                                <div class="w-full bg-gray-300 dark:bg-forge-metal h-1.5">
                                     <div class="bg-forge-red h-1.5 w-1/5"></div>
                                 </div>
                             </div>
                             <p class="font-inter text-xs text-gray-600 dark:text-gray-400">
-                                Chassis de-tabbed on optical laser table. 4130 tubular subframe TIG fabrication in progress[cite: 1, 2].
+                                Chassis de-tabbed on optical laser table. 4130 tubular subframe TIG fabrication in progress.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-forge-lightBorder dark:border-forge-border mt-4 font-code text-[10px] text-forge-steel">
@@ -855,10 +913,10 @@
         <!-- ========================================================= -->
         <!-- NEW SECTION 6: TRACK SHAKEDOWN & HANDOVER PROTOCOL        -->
         <!-- ========================================================= -->
-        <section class="py-16 sm:py-24 border-b border-forge-lightBorder dark:border-forge-border industrial-grid">
+        <section class="py-16 sm:py-24 border-b border-forge-red/30 dark:border-forge-red/30 bg-white dark:bg-forge-darkHighlight industrial-grid">
             <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="bg-white dark:bg-forge-darkCard border-2 border-forge-lightBorder dark:border-forge-border p-8 sm:p-12 shadow-2xl">
+                <div class="bg-white dark:bg-black/90 border-2 border-forge-red/50 shadow-neon-subtle p-8 sm:p-12">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                         
                         <div class="lg:col-span-8">
@@ -867,7 +925,7 @@
                                 THE 250-MILE <span class="text-forge-red">SHAKEDOWN RITUAL.</span>
                             </h2>
                             <p class="font-inter text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                                We never ship a motorcycle directly from the workbench. Each completed machine undertakes a mandatory 250-mile road and track stress-test to settle suspension valves, cycle thermodynamic engine heat, and re-torque cylinder studs[cite: 1, 2].
+                                We never ship a motorcycle directly from the workbench. Each completed machine undertakes a mandatory 250-mile road and track stress-test to settle suspension valves, cycle thermodynamic engine heat, and re-torque cylinder studs.
                             </p>
 
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-code text-xs pt-4 border-t border-forge-lightBorder dark:border-forge-border">
@@ -877,7 +935,7 @@
                                 </div>
                                 <div>
                                     <span class="text-forge-steel block text-[10px]">PROVENANCE BOOK</span>
-                                    <strong class="text-gray-900 dark:text-white">LEATHER BOUND BLUEPRINT[cite: 1, 2]</strong>
+                                    <strong class="text-gray-900 dark:text-white">LEATHER BOUND BLUEPRINT</strong>
                                 </div>
                                 <div>
                                     <span class="text-forge-steel block text-[10px]">GLOBAL LOGISTICS</span>
@@ -912,10 +970,21 @@
                 <!-- Col 1: Brand & Credo (4 cols) with Navbar Gear Logo -->
                 <div class="lg:col-span-4">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 sm:w-11 sm:h-11 bg-forge-red flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle">
-                            <svg class="w-6 h-6 transform skew-x-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="3"></circle>
-                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        <div class="w-10 h-10 sm:w-11 sm:h-11 bg-gradient-to-br from-forge-red to-forge-crimson flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle border border-white/20">
+                            <svg class="w-6 h-6 sm:w-7 sm:h-7 transform skew-x-6" viewBox="0 0 24 24" fill="none">
+                                <!-- Crossed Con-Rods -->
+                                <path d="M4.5 19.5L19.5 4.5M19.5 19.5L4.5 4.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="4.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <circle cx="19.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <circle cx="4.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <circle cx="19.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <!-- Center Forged Piston & Anvil Base -->
+                                <path d="M7.5 6.5H16.5C17.05 6.5 17.5 6.95 17.5 7.5V14C17.5 15 16.5 16 15.5 16H14V19H17L18 20.5H6L7 19H10V16H8.5C7.5 16 6.5 15 6.5 14V7.5C6.5 6.95 6.95 6.5 7.5 6.5Z" fill="white"/>
+                                <!-- Piston Compression Ring Slots -->
+                                <line x1="6.5" y1="8.5" x2="17.5" y2="8.5" stroke="#E51D24" stroke-width="1.1"/>
+                                <line x1="6.5" y1="10.8" x2="17.5" y2="10.8" stroke="#E51D24" stroke-width="1.1"/>
+                                <!-- Wrist Pin Bore -->
+                                <circle cx="12" cy="13.5" r="1.7" fill="#E51D24"/>
                             </svg>
                         </div>
                         <div class="flex flex-col">
@@ -924,10 +993,10 @@
                         </div>
                     </div>
                     <p class="font-inter text-xs text-gray-400 max-w-sm leading-relaxed mb-4">
-                        Motorcycle Custom Build &amp; Restoration Shop dedicated to architectural precision, hand-welded 4130 tubular chassis, and museum-standard engine rebuilds[cite: 3].
+                        Motorcycle Custom Build &amp; Restoration Shop dedicated to architectural precision, hand-welded 4130 tubular chassis, and museum-standard engine rebuilds.
                     </p>
                     <span class="font-code text-[11px] text-forge-steel uppercase tracking-wider block">
-                        CERTIFIED TIG AWS D1.1 &bull; DYNOJET TUNED[cite: 3]
+                        CERTIFIED TIG AWS D1.1 &bull; DYNOJET TUNED
                     </span>
                 </div>
 
@@ -960,7 +1029,7 @@
                 <!-- Col 4: Project Enquiry Dispatch (3 cols) -->
                 <div class="lg:col-span-3">
                     <h4 class="font-tech font-bold text-sm uppercase tracking-wider text-white mb-4">DISPATCH</h4>
-                    <p class="font-inter text-xs text-gray-400 mb-3">Register for workshop build tear-downs, rare donor chassis drops, and dyno releases[cite: 3].</p>
+                    <p class="font-inter text-xs text-gray-400 mb-3">Register for workshop build tear-downs, rare donor chassis drops, and dyno releases.</p>
                     <form onsubmit="event.preventDefault(); alert('Enquiry subscription recorded.');" class="flex items-stretch">
                         <input type="email" required placeholder="pilot@domain.com" class="bg-forge-metal border border-forge-border text-xs px-3 py-2 text-white font-code w-full focus:outline-none focus:border-forge-red">
                         <button type="submit" class="bg-forge-red hover:bg-forge-redHover text-white font-tech font-bold px-4 text-xs uppercase tracking-wider">JOIN</button>
@@ -971,7 +1040,7 @@
 
             <!-- Bottom Bar -->
             <div class="pt-6 border-t border-forge-border flex flex-col sm:flex-row items-center justify-between gap-4 font-code text-[11px] text-gray-500">
-                <p>&copy; 2026 MOTORCYCLE CUSTOM BUILD &amp; RESTORATION SHOP. ALL RIGHTS RESERVED[cite: 3].</p>
+                <p>&copy; 2026 MOTORCYCLE CUSTOM BUILD &amp; RESTORATION SHOP. ALL RIGHTS RESERVED.</p>
                 <div class="flex items-center gap-6">
                     <a href="index.html" class="hover:text-forge-red">TOP &uarr;</a>
                     <span>PRECISION PERFORMANCE</span>

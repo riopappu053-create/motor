@@ -27,10 +27,12 @@
                             red: '#E51D24',         /* Primary High-Octane Red */
                             redHover: '#B9141A',    /* Darker Hover Red */
                             crimson: '#8F0E14',     /* Secondary Deep Crimson */
-                            black: '#0A0B0E',
-                            darkCard: '#12141A',
+                            black: '#000000',       /* Pitch Black Primary Background */
+                            darkCard: '#111317',    /* Dark Grey for Alternate Sections & Cards */
+                            darkAlt: '#141215',     /* Subtle Primary Red Tinted Dark Grey */
+                            darkHighlight: '#1A0E10', /* Subtle Red-Glow Highlighted Section Background */
                             border: '#232733',
-                            metal: '#1A1D26',
+                            metal: '#181A22',
                             steel: '#8E95A5',
                             lightBg: '#F3F4F7',
                             lightCard: '#FFFFFF',
@@ -113,35 +115,46 @@
     </style>
 </head>
 
-<body class="bg-forge-lightBg dark:bg-forge-black text-gray-900 dark:text-gray-100 antialiased overflow-x-hidden transition-colors duration-300 selection:bg-forge-red selection:text-white flex flex-col min-h-screen">
+<body class="bg-forge-lightBg dark:bg-black text-gray-900 dark:text-gray-100 antialiased overflow-x-hidden transition-colors duration-300 selection:bg-forge-red selection:text-white flex flex-col min-h-screen">
 
     <!-- ========================================================= -->
     <!-- 1. MECHANICAL FLOATING NAVBAR                             -->
     <!-- ========================================================= -->
     <header class="sticky top-3 sm:top-4 z-50 w-full px-3 sm:px-6 lg:px-8">
-        <nav class="max-w-[1400px] mx-auto bg-white/95 dark:bg-forge-darkCard/90 backdrop-blur-xl border-2 border-gray-300 dark:border-forge-border shadow-2xl px-4 sm:px-6 py-3 transition-all">
-            <div class="flex items-center justify-between gap-4">
+        <nav class="max-w-[1400px] mx-auto bg-white/95 dark:bg-black/95 backdrop-blur-xl border-2 border-gray-300 dark:border-forge-border shadow-2xl px-3 sm:px-6 py-2.5 sm:py-3 transition-all">
+            <div class="flex items-center justify-between gap-2 lg:gap-3 xl:gap-6 min-w-0">
                 
                 <!-- Brand Identity -->
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 sm:w-11 sm:h-11 bg-forge-red flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle group-hover:scale-105 transition-transform">
-                        <svg class="w-6 h-6 transform skew-x-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 xl:w-11 xl:h-11 bg-gradient-to-br from-forge-red to-forge-crimson flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle group-hover:scale-105 transition-transform border border-white/20 shrink-0">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 transform skew-x-6" viewBox="0 0 24 24" fill="none">
+                            <!-- Crossed Con-Rods -->
+                            <path d="M4.5 19.5L19.5 4.5M19.5 19.5L4.5 4.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="4.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <circle cx="19.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <circle cx="4.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <circle cx="19.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <!-- Center Forged Piston & Anvil Base -->
+                            <path d="M7.5 6.5H16.5C17.05 6.5 17.5 6.95 17.5 7.5V14C17.5 15 16.5 16 15.5 16H14V19H17L18 20.5H6L7 19H10V16H8.5C7.5 16 6.5 15 6.5 14V7.5C6.5 6.95 6.95 6.5 7.5 6.5Z" fill="white"/>
+                            <!-- Piston Compression Ring Slots -->
+                            <line x1="6.5" y1="8.5" x2="17.5" y2="8.5" stroke="#E51D24" stroke-width="1.1"/>
+                            <line x1="6.5" y1="10.8" x2="17.5" y2="10.8" stroke="#E51D24" stroke-width="1.1"/>
+                            <!-- Wrist Pin Bore -->
+                            <circle cx="12" cy="13.5" r="1.7" fill="#E51D24"/>
                         </svg>
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-condensed font-black text-2xl sm:text-3xl tracking-wider text-gray-950 dark:text-white uppercase leading-none">IRONFORGE<span class="text-forge-red">.MOTO</span></span>
-                        <span class="font-code text-[10px] tracking-widest text-forge-steel uppercase -mt-0.5">CUSTOM BUILDS &amp; RESTORATION</span>
+                        <span class="font-condensed font-black text-xl sm:text-2xl xl:text-3xl tracking-wider text-gray-950 dark:text-white uppercase leading-none">IRONFORGE<span class="text-forge-red">.MOTO</span></span>
+                        <span class="font-code text-[9px] sm:text-[10px] tracking-widest text-forge-steel uppercase -mt-0.5 whitespace-nowrap">CUSTOM BUILDS &amp; RESTORATION</span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Links (Single-Word Names) -->
-                <div class="hidden lg:flex items-center gap-7 font-tech font-bold tracking-widest text-sm uppercase">
+                <div class="hidden lg:flex items-center gap-3.5 xl:gap-6 font-tech font-bold tracking-wider xl:tracking-widest text-xs xl:text-sm uppercase shrink-0">
                     
                     <!-- Home with Scrollbar Dropdown (Home-1 & Home-2) -->
-                    <div class="relative group py-2">
-                        <button class="flex items-center gap-1 text-forge-red hover:text-forge-redHover transition-colors focus:outline-none">
+                    <div class="relative group">
+                        <button class="h-9 flex items-center gap-1 px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors focus:outline-none">
                             <span>Home</span>
                             <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
@@ -149,7 +162,7 @@
                         </button>
                         
                         <!-- Dropdown Panel with Internal Red Scrollbar -->
-                        <div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="bg-white dark:bg-forge-darkCard border border-forge-lightBorder dark:border-forge-border shadow-xl p-2 max-h-36 overflow-y-auto custom-scroll">
                                 <a href="index.html" class="flex items-center justify-between px-3 py-2 text-xs text-gray-700 dark:text-gray-300 hover:bg-forge-red hover:text-white transition-colors">
                                     <span>Home-1</span>
@@ -163,31 +176,31 @@
                         </div>
                     </div>
 
-                    <a href="about.html" class="text-forge-red transition-colors">About</a>
-                    <a href="builds.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Builds</a>
-                    <a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Services</a>
-                    <a href="portfolio.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Portfolio</a>
-                    <a href="garage.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Garage</a>
-                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Contact</a>
+                    <a href="about.html" class="h-9 flex items-center px-2.5 text-forge-red font-bold relative after:content-[''] after:absolute after:bottom-0 after:left-1 after:right-1 after:h-0.5 after:bg-forge-red transition-colors">About</a>
+                    <a href="builds.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Builds</a>
+                    <a href="services.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Services</a>
+                    <a href="portfolio.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Portfolio</a>
+                    <a href="garage.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Garage</a>
+                    <a href="contact.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Contact</a>
                 </div>
 
                 <!-- Right Action Cluster -->
-                <div class="flex items-center gap-3">
-                    <!-- RTL / LTR Toggle Button (Hidden on Mobile, Visible on Desktop) -->
-                    <button onclick="toggleRTL()" aria-label="Toggle Direction" class="rtl-toggle-btn hidden lg:flex w-9 h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors font-tech text-xs tracking-wider uppercase">
+                <div class="flex items-center gap-2 xl:gap-3 shrink-0">
+                    <!-- RTL / LTR Toggle Button -->
+                    <button onclick="toggleRTL()" aria-label="Toggle Direction" class="rtl-toggle-btn hidden lg:flex w-8 h-8 xl:w-9 xl:h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors font-tech text-xs tracking-wider uppercase">
                         RTL
                     </button>
 
-                    <!-- Dark / Light Mode Toggle (Hidden on Mobile, Visible on Desktop) -->
-                    <button onclick="toggleTheme()" aria-label="Toggle Theme" class="hidden lg:flex w-9 h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors">
+                    <!-- Dark / Light Mode Toggle -->
+                    <button onclick="toggleTheme()" aria-label="Toggle Theme" class="hidden lg:flex w-8 h-8 xl:w-9 xl:h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors">
                         <svg class="w-4 h-4 hidden dark:block text-forge-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                         <svg class="w-4 h-4 block dark:hidden text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                     </button>
 
-                    <!-- Action Button (Hidden on Mobile, Visible on Desktop) -->
-                    <a href="contact.html" class="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 bg-forge-red hover:bg-forge-redHover text-white font-tech font-bold text-sm tracking-wider uppercase chamfer-btn transition-transform shadow-neon-subtle hover:-translate-y-0.5">
+                    <!-- Action Button -->
+                    <a href="contact.html" class="hidden lg:inline-flex items-center gap-1.5 xl:gap-2 px-3 xl:px-5 py-2 xl:py-2.5 bg-forge-red hover:bg-forge-redHover text-white font-tech font-bold text-xs xl:text-sm tracking-wider uppercase chamfer-btn transition-transform shadow-neon-subtle hover:-translate-y-0.5 whitespace-nowrap shrink-0">
                         <span>ENQUIRE</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-3.5 h-3.5 xl:w-4 xl:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
 
                     <!-- Mobile Hamburger Button -->
@@ -202,7 +215,7 @@
                 
                 <!-- Home Section with Scrollbar for Home-1 & Home-2 -->
                 <div class="py-2 border-b border-gray-200 dark:border-forge-border/40">
-                    <div class="text-forge-red font-bold flex items-center justify-between mb-1.5">
+                    <div class="text-gray-900 dark:text-gray-300 font-bold flex items-center justify-between mb-1.5">
                         <span>Home</span>
                         <span class="text-xs text-gray-600 dark:text-forge-steel font-code">VARIANTS</span>
                     </div>
@@ -221,7 +234,7 @@
                 </div>
                 
                 <!-- Dark Legible Links in Light Mode, Clean Gray in Dark Mode -->
-                <a href="about.html" class="py-2.5 text-forge-red font-bold transition-colors">About</a>
+                <a href="about.html" class="py-2.5 text-forge-red font-bold border-l-2 border-forge-red pl-2.5 bg-forge-red/10 transition-colors">About</a>
                 <a href="builds.html" class="py-2.5 text-gray-900 dark:text-gray-300 hover:text-forge-red transition-colors">Builds</a>
                 <a href="services.html" class="py-2.5 text-gray-900 dark:text-gray-300 hover:text-forge-red transition-colors">Services</a>
                 <a href="portfolio.html" class="py-2.5 text-gray-900 dark:text-gray-300 hover:text-forge-red transition-colors">Portfolio</a>
@@ -320,7 +333,7 @@
 <!-- ========================================================= -->
 <!-- SECTION 1 · OUR STORY (TIMELINE JOURNEY)                   -->
 <!-- ========================================================= -->
-<section id="our-story" class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-white dark:bg-forge-black relative industrial-grid">
+<section id="our-story" class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-white dark:bg-forge-darkCard relative industrial-grid">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
@@ -396,7 +409,7 @@
 <!-- ========================================================= -->
 <!-- SECTION 2 · MISSION & VISION (DUAL PANEL)                  -->
 <!-- ========================================================= -->
-<section id="mission-vision" class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-forge-lightBg dark:bg-forge-darkCard relative industrial-grid">
+<section id="mission-vision" class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-forge-lightBg dark:bg-black relative industrial-grid">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <div class="inline-flex items-center gap-2 border border-forge-red/40 bg-forge-red/10 px-3 py-1 mb-3">
@@ -472,7 +485,7 @@
 <!-- ========================================================= -->
 <!-- SECTION 3 · MEET THE TEAM (FULL ROSTER)                    -->
 <!-- ========================================================= -->
-<section id="meet-team" class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-white dark:bg-forge-black relative industrial-grid">
+<section id="meet-team" class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-white dark:bg-forge-darkAlt relative industrial-grid">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
@@ -571,7 +584,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <!-- Value 1 -->
-            <div class="bg-white dark:bg-forge-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
+            <div class="bg-white dark:bg-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
                 <div class="flex items-start justify-between mb-5 pb-4 border-b border-gray-200 dark:border-forge-border">
                     <div class="w-11 h-11 bg-forge-red/10 border border-forge-red/40 flex items-center justify-center">
                         <svg class="w-5 h-5 text-forge-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
@@ -582,7 +595,7 @@
                 <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed">If a shortcut would compromise structure, we don't take it. Period. Every weld is x-ray grade.</p>
             </div>
             <!-- Value 2 -->
-            <div class="bg-white dark:bg-forge-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
+            <div class="bg-white dark:bg-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
                 <div class="flex items-start justify-between mb-5 pb-4 border-b border-gray-200 dark:border-forge-border">
                     <div class="w-11 h-11 bg-forge-red/10 border border-forge-red/40 flex items-center justify-center">
                         <svg class="w-5 h-5 text-forge-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -593,7 +606,7 @@
                 <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Every panel, tank, and subframe is shaped by human hands. No stamped reproductions. No compromise.</p>
             </div>
             <!-- Value 3 -->
-            <div class="bg-white dark:bg-forge-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
+            <div class="bg-white dark:bg-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
                 <div class="flex items-start justify-between mb-5 pb-4 border-b border-gray-200 dark:border-forge-border">
                     <div class="w-11 h-11 bg-forge-red/10 border border-forge-red/40 flex items-center justify-center">
                         <svg class="w-5 h-5 text-forge-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
@@ -604,7 +617,7 @@
                 <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Every claim is verified. Dyno sheets, torque logs, x-ray welds — the numbers don't lie.</p>
             </div>
             <!-- Value 4 -->
-            <div class="bg-white dark:bg-forge-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
+            <div class="bg-white dark:bg-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
                 <div class="flex items-start justify-between mb-5 pb-4 border-b border-gray-200 dark:border-forge-border">
                     <div class="w-11 h-11 bg-forge-red/10 border border-forge-red/40 flex items-center justify-center">
                         <svg class="w-5 h-5 text-forge-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0zm6 0a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -615,7 +628,7 @@
                 <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Two in-person visits included in every build. Monthly progress photos. No surprises at handover.</p>
             </div>
             <!-- Value 5 -->
-            <div class="bg-white dark:bg-forge-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
+            <div class="bg-white dark:bg-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
                 <div class="flex items-start justify-between mb-5 pb-4 border-b border-gray-200 dark:border-forge-border">
                     <div class="w-11 h-11 bg-forge-red/10 border border-forge-red/40 flex items-center justify-center">
                         <svg class="w-5 h-5 text-forge-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
@@ -626,7 +639,7 @@
                 <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Every barn-find rescued is history saved. We document provenance and archive every restoration.</p>
             </div>
             <!-- Value 6 -->
-            <div class="bg-white dark:bg-forge-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
+            <div class="bg-white dark:bg-black border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red hover:-translate-y-1 transition-all">
                 <div class="flex items-start justify-between mb-5 pb-4 border-b border-gray-200 dark:border-forge-border">
                     <div class="w-11 h-11 bg-forge-red/10 border border-forge-red/40 flex items-center justify-center">
                         <svg class="w-5 h-5 text-forge-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
@@ -644,7 +657,7 @@
 <!-- ========================================================= -->
 <!-- SECTION 5 · AWARDS & RECOGNITION                           -->
 <!-- ========================================================= -->
-<section id="awards" class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-forge-black relative industrial-grid">
+<section id="awards" class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-red/30 bg-white dark:bg-forge-darkHighlight relative industrial-grid">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
@@ -652,57 +665,57 @@
                     <span class="w-2 h-2 bg-forge-red"></span>
                     <span class="font-code text-xs uppercase tracking-widest text-forge-red">TROPHY CABINET // VERIFIED RECOGNITION</span>
                 </div>
-                <h2 class="font-condensed font-black text-4xl sm:text-6xl text-white uppercase leading-none">
+                <h2 class="font-condensed font-black text-4xl sm:text-6xl text-gray-950 dark:text-white uppercase leading-none">
                     AWARDS &amp; <span class="text-forge-red">HONORS.</span>
                 </h2>
             </div>
-            <p class="font-inter text-sm sm:text-base text-gray-400 max-w-md">
+            <p class="font-inter text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-md">
                 27 trophies across AMCA, Hand-Built Show, and regional concours events since 2014.
             </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
             <!-- Award 1 -->
-            <div class="bg-forge-darkCard border-2 border-forge-red p-6 relative overflow-hidden">
+            <div class="bg-gray-50 dark:bg-forge-darkCard border-2 border-forge-red p-6 relative overflow-hidden shadow-sm">
                 <span class="absolute top-0 right-0 bg-forge-red text-white font-code text-[10px] px-3 py-1 uppercase">GOLD</span>
                 <svg class="w-9 h-9 text-forge-red mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.39 6.955H21l-5.3 3.906 2.011 6.955L12 15.969l-5.711 3.847 2.011-6.955L3 8.955h6.61L12 2z"/></svg>
                 <span class="font-code text-[10px] text-forge-red uppercase tracking-widest block mb-2">// 2024</span>
-                <h3 class="font-condensed font-black text-lg text-white uppercase leading-tight mb-2">HAND-BUILT SHOW</h3>
-                <p class="font-inter text-xs text-gray-400 leading-relaxed">Best Café Racer · The Silver Arrow build.</p>
+                <h3 class="font-condensed font-black text-lg text-gray-950 dark:text-white uppercase leading-tight mb-2">HAND-BUILT SHOW</h3>
+                <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Best Café Racer · The Silver Arrow build.</p>
             </div>
             <!-- Award 2 -->
-            <div class="bg-forge-darkCard border-2 border-forge-border p-6 hover:border-forge-red transition-all">
+            <div class="bg-gray-50 dark:bg-forge-darkCard border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red transition-all">
                 <svg class="w-9 h-9 text-forge-red mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.39 6.955H21l-5.3 3.906 2.011 6.955L12 15.969l-5.711 3.847 2.011-6.955L3 8.955h6.61L12 2z"/></svg>
                 <span class="font-code text-[10px] text-forge-red uppercase tracking-widest block mb-2">// 2023</span>
-                <h3 class="font-condensed font-black text-lg text-white uppercase leading-tight mb-2">AMCA NATIONAL</h3>
-                <p class="font-inter text-xs text-gray-400 leading-relaxed">Best Vintage Restoration · 1962 BSA Gold Star.</p>
+                <h3 class="font-condensed font-black text-lg text-gray-950 dark:text-white uppercase leading-tight mb-2">AMCA NATIONAL</h3>
+                <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Best Vintage Restoration · 1962 BSA Gold Star.</p>
             </div>
             <!-- Award 3 -->
-            <div class="bg-forge-darkCard border-2 border-forge-border p-6 hover:border-forge-red transition-all">
+            <div class="bg-gray-50 dark:bg-forge-darkCard border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red transition-all">
                 <svg class="w-9 h-9 text-forge-red mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.39 6.955H21l-5.3 3.906 2.011 6.955L12 15.969l-5.711 3.847 2.011-6.955L3 8.955h6.61L12 2z"/></svg>
                 <span class="font-code text-[10px] text-forge-red uppercase tracking-widest block mb-2">// 2022</span>
-                <h3 class="font-condensed font-black text-lg text-white uppercase leading-tight mb-2">CONCOURS d'ELEGANCE</h3>
-                <p class="font-inter text-xs text-gray-400 leading-relaxed">Runner-Up · 1974 Norton Commando 850.</p>
+                <h3 class="font-condensed font-black text-lg text-gray-950 dark:text-white uppercase leading-tight mb-2">CONCOURS d'ELEGANCE</h3>
+                <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Runner-Up · 1974 Norton Commando 850.</p>
             </div>
             <!-- Award 4 -->
-            <div class="bg-forge-darkCard border-2 border-forge-border p-6 hover:border-forge-red transition-all">
+            <div class="bg-gray-50 dark:bg-forge-darkCard border-2 border-gray-300 dark:border-forge-border p-6 hover:border-forge-red transition-all">
                 <svg class="w-9 h-9 text-forge-red mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.39 6.955H21l-5.3 3.906 2.011 6.955L12 15.969l-5.711 3.847 2.011-6.955L3 8.955h6.61L12 2z"/></svg>
                 <span class="font-code text-[10px] text-forge-red uppercase tracking-widest block mb-2">// 2020</span>
-                <h3 class="font-condensed font-black text-lg text-white uppercase leading-tight mb-2">MOTOGIRO D'ITALIA</h3>
-                <p class="font-inter text-xs text-gray-400 leading-relaxed">Special Jury Award · Custom Hardtail Bobber.</p>
+                <h3 class="font-condensed font-black text-lg text-gray-950 dark:text-white uppercase leading-tight mb-2">MOTOGIRO D'ITALIA</h3>
+                <p class="font-inter text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Special Jury Award · Custom Hardtail Bobber.</p>
             </div>
         </div>
 
         <!-- Certification Strip -->
-        <div class="border-t border-forge-border pt-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="border-t border-gray-300 dark:border-forge-border pt-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
                 <svg class="w-7 h-7 text-forge-red mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                <span class="font-condensed font-bold text-sm text-white uppercase block">AWS D1.1</span>
+                <span class="font-condensed font-bold text-sm text-gray-900 dark:text-white uppercase block">AWS D1.1</span>
                 <span class="font-code text-[10px] text-forge-steel uppercase tracking-wider">TIG CERTIFIED</span>
             </div>
             <div>
                 <svg class="w-7 h-7 text-forge-red mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-                <span class="font-condensed font-bold text-sm text-white uppercase block">AMCA MEMBER</span>
+                <span class="font-condensed font-bold text-sm text-gray-900 dark:text-white uppercase block">AMCA MEMBER</span>
                 <span class="font-code text-[10px] text-forge-steel uppercase tracking-wider">SINCE 2015</span>
             </div>
             <div>
@@ -730,10 +743,21 @@
                 <!-- Col 1: Brand & Credo (4 cols) with Navbar Gear Logo -->
                 <div class="lg:col-span-4">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 sm:w-11 sm:h-11 bg-forge-red flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle">
-                            <svg class="w-6 h-6 transform skew-x-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="3"></circle>
-                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        <div class="w-10 h-10 sm:w-11 sm:h-11 bg-gradient-to-br from-forge-red to-forge-crimson flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle border border-white/20">
+                            <svg class="w-6 h-6 sm:w-7 sm:h-7 transform skew-x-6" viewBox="0 0 24 24" fill="none">
+                                <!-- Crossed Con-Rods -->
+                                <path d="M4.5 19.5L19.5 4.5M19.5 19.5L4.5 4.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="4.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <circle cx="19.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <circle cx="4.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <circle cx="19.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <!-- Center Forged Piston & Anvil Base -->
+                                <path d="M7.5 6.5H16.5C17.05 6.5 17.5 6.95 17.5 7.5V14C17.5 15 16.5 16 15.5 16H14V19H17L18 20.5H6L7 19H10V16H8.5C7.5 16 6.5 15 6.5 14V7.5C6.5 6.95 6.95 6.5 7.5 6.5Z" fill="white"/>
+                                <!-- Piston Compression Ring Slots -->
+                                <line x1="6.5" y1="8.5" x2="17.5" y2="8.5" stroke="#E51D24" stroke-width="1.1"/>
+                                <line x1="6.5" y1="10.8" x2="17.5" y2="10.8" stroke="#E51D24" stroke-width="1.1"/>
+                                <!-- Wrist Pin Bore -->
+                                <circle cx="12" cy="13.5" r="1.7" fill="#E51D24"/>
                             </svg>
                         </div>
                         <div class="flex flex-col">
@@ -742,10 +766,10 @@
                         </div>
                     </div>
                     <p class="font-inter text-xs text-gray-400 max-w-sm leading-relaxed mb-4">
-                        Motorcycle Custom Build &amp; Restoration Shop dedicated to architectural precision, hand-welded 4130 tubular chassis, and museum-standard engine rebuilds.[cite: 2]
+                        Motorcycle Custom Build &amp; Restoration Shop dedicated to architectural precision, hand-welded 4130 tubular chassis, and museum-standard engine rebuilds.
                     </p>
                     <span class="font-code text-[11px] text-forge-steel uppercase tracking-wider block">
-                        CERTIFIED TIG AWS D1.1 &bull; DYNOJET TUNED[cite: 2]
+                        CERTIFIED TIG AWS D1.1 &bull; DYNOJET TUNED
                     </span>
                 </div>
 
@@ -778,7 +802,7 @@
                 <!-- Col 4: Project Enquiry Dispatch (3 cols) -->
                 <div class="lg:col-span-3">
                     <h4 class="font-tech font-bold text-sm uppercase tracking-wider text-white mb-4">DISPATCH</h4>
-                    <p class="font-inter text-xs text-gray-400 mb-3">Register for workshop build tear-downs, rare donor chassis drops, and dyno releases.[cite: 2]</p>
+                    <p class="font-inter text-xs text-gray-400 mb-3">Register for workshop build tear-downs, rare donor chassis drops, and dyno releases.</p>
                     <form onsubmit="event.preventDefault(); alert('Enquiry subscription recorded.');" class="flex items-stretch">
                         <input type="email" required placeholder="pilot@domain.com" class="bg-forge-metal border border-forge-border text-xs px-3 py-2 text-white font-code w-full focus:outline-none focus:border-forge-red">
                         <button type="submit" class="bg-forge-red hover:bg-forge-redHover text-white font-tech font-bold px-4 text-xs uppercase tracking-wider">JOIN</button>
@@ -789,7 +813,7 @@
 
             <!-- Bottom Bar -->
             <div class="pt-6 border-t border-forge-border flex flex-col sm:flex-row items-center justify-between gap-4 font-code text-[11px] text-gray-500">
-                <p>&copy; 2026 MOTORCYCLE CUSTOM BUILD &amp; RESTORATION SHOP. ALL RIGHTS RESERVED.[cite: 2]</p>
+                <p>&copy; 2026 MOTORCYCLE CUSTOM BUILD &amp; RESTORATION SHOP. ALL RIGHTS RESERVED.</p>
                 <div class="flex items-center gap-6">
                     <a href="index.html" class="hover:text-forge-red">TOP &uarr;</a>
                     <span>PRECISION PERFORMANCE</span>

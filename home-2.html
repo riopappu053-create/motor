@@ -27,10 +27,12 @@
                             red: '#E51D24',         /* Primary High-Octane Red */
                             redHover: '#B9141A',    /* Darker Hover Red */
                             crimson: '#8F0E14',     /* Secondary Deep Crimson */
-                            black: '#0A0B0E',
-                            darkCard: '#12141A',
+                            black: '#000000',       /* Pitch Black Primary Background */
+                            darkCard: '#111317',    /* Dark Grey for Alternate Sections & Cards */
+                            darkAlt: '#141215',     /* Subtle Primary Red Tinted Dark Grey */
+                            darkHighlight: '#1A0E10', /* Subtle Red-Glow Highlighted Section Background */
                             border: '#232733',
-                            metal: '#1A1D26',
+                            metal: '#181A22',
                             steel: '#8E95A5',
                             lightBg: '#F3F4F7',
                             lightCard: '#FFFFFF',
@@ -123,35 +125,46 @@
     </style>
 </head>
 
-<body class="bg-forge-lightBg dark:bg-forge-black text-gray-900 dark:text-gray-100 antialiased overflow-x-hidden transition-colors duration-300 selection:bg-forge-red selection:text-white flex flex-col min-h-screen">
+<body class="bg-forge-lightBg dark:bg-black text-gray-900 dark:text-gray-100 antialiased overflow-x-hidden transition-colors duration-300 selection:bg-forge-red selection:text-white flex flex-col min-h-screen">
 
     <!-- ========================================================= -->
     <!-- 1. MECHANICAL FLOATING NAVBAR                             -->
     <!-- ========================================================= -->
     <header class="sticky top-3 sm:top-4 z-50 w-full px-3 sm:px-6 lg:px-8">
-        <nav class="max-w-[1400px] mx-auto bg-white/95 dark:bg-forge-darkCard/90 backdrop-blur-xl border-2 border-gray-300 dark:border-forge-border shadow-2xl px-4 sm:px-6 py-3 transition-all">
-            <div class="flex items-center justify-between gap-4">
+        <nav class="max-w-[1400px] mx-auto bg-white/95 dark:bg-black/95 backdrop-blur-xl border-2 border-gray-300 dark:border-forge-border shadow-2xl px-3 sm:px-6 py-2.5 sm:py-3 transition-all">
+            <div class="flex items-center justify-between gap-2 lg:gap-3 xl:gap-6 min-w-0">
                 
                 <!-- Brand Identity -->
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 sm:w-11 sm:h-11 bg-forge-red flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle group-hover:scale-105 transition-transform">
-                        <svg class="w-6 h-6 transform skew-x-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 xl:w-11 xl:h-11 bg-gradient-to-br from-forge-red to-forge-crimson flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle group-hover:scale-105 transition-transform border border-white/20 shrink-0">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 transform skew-x-6" viewBox="0 0 24 24" fill="none">
+                            <!-- Crossed Con-Rods -->
+                            <path d="M4.5 19.5L19.5 4.5M19.5 19.5L4.5 4.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="4.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <circle cx="19.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <circle cx="4.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <circle cx="19.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                            <!-- Center Forged Piston & Anvil Base -->
+                            <path d="M7.5 6.5H16.5C17.05 6.5 17.5 6.95 17.5 7.5V14C17.5 15 16.5 16 15.5 16H14V19H17L18 20.5H6L7 19H10V16H8.5C7.5 16 6.5 15 6.5 14V7.5C6.5 6.95 6.95 6.5 7.5 6.5Z" fill="white"/>
+                            <!-- Piston Compression Ring Slots -->
+                            <line x1="6.5" y1="8.5" x2="17.5" y2="8.5" stroke="#E51D24" stroke-width="1.1"/>
+                            <line x1="6.5" y1="10.8" x2="17.5" y2="10.8" stroke="#E51D24" stroke-width="1.1"/>
+                            <!-- Wrist Pin Bore -->
+                            <circle cx="12" cy="13.5" r="1.7" fill="#E51D24"/>
                         </svg>
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-condensed font-black text-2xl sm:text-3xl tracking-wider text-gray-950 dark:text-white uppercase leading-none">IRONFORGE<span class="text-forge-red">.MOTO</span></span>
-                        <span class="font-code text-[10px] tracking-widest text-forge-steel uppercase -mt-0.5">CUSTOM BUILDS &amp; RESTORATION</span>
+                        <span class="font-condensed font-black text-xl sm:text-2xl xl:text-3xl tracking-wider text-gray-950 dark:text-white uppercase leading-none">IRONFORGE<span class="text-forge-red">.MOTO</span></span>
+                        <span class="font-code text-[9px] sm:text-[10px] tracking-widest text-forge-steel uppercase -mt-0.5 whitespace-nowrap">CUSTOM BUILDS &amp; RESTORATION</span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Links (Single-Word Names) -->
-                <div class="hidden lg:flex items-center gap-7 font-tech font-bold tracking-widest text-sm uppercase">
+                <div class="hidden lg:flex items-center gap-3.5 xl:gap-6 font-tech font-bold tracking-wider xl:tracking-widest text-xs xl:text-sm uppercase shrink-0">
                     
                     <!-- Home with Scrollbar Dropdown (Home-1 & Home-2) -->
-                    <div class="relative group py-2">
-                        <button class="flex items-center gap-1 text-forge-red hover:text-forge-redHover transition-colors focus:outline-none">
+                    <div class="relative group">
+                        <button class="h-9 flex items-center gap-1 px-2.5 text-forge-red font-bold relative after:content-[''] after:absolute after:bottom-0 after:left-1 after:right-1 after:h-0.5 after:bg-forge-red transition-colors focus:outline-none">
                             <span>Home</span>
                             <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
@@ -159,13 +172,13 @@
                         </button>
                         
                         <!-- Dropdown Panel with Internal Red Scrollbar -->
-                        <div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="bg-white dark:bg-forge-darkCard border border-forge-lightBorder dark:border-forge-border shadow-xl p-2 max-h-36 overflow-y-auto custom-scroll">
                                 <a href="index.html" class="flex items-center justify-between px-3 py-2 text-xs text-gray-700 dark:text-gray-300 hover:bg-forge-red hover:text-white transition-colors">
                                     <span>Home-1</span>
                                     <span class="font-code text-[10px] opacity-70">Racer</span>
                                 </a>
-                                <a href="home-2.html" class="flex items-center justify-between px-3 py-2 text-xs text-gray-700 dark:text-gray-300 hover:bg-forge-red hover:text-white transition-colors">
+                                <a href="home-2.html" class="flex items-center justify-between px-3 py-2 text-xs bg-forge-red/15 text-forge-red font-bold border-l-2 border-forge-red transition-colors">
                                     <span>Home-2</span>
                                     <span class="font-code text-[10px] opacity-70">Classic</span>
                                 </a>
@@ -173,31 +186,31 @@
                         </div>
                     </div>
 
-                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">About</a>
-                    <a href="builds.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Builds</a>
-                    <a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Services</a>
-                    <a href="portfolio.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Portfolio</a>
-                    <a href="garage.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Garage</a>
-                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Contact</a>
+                    <a href="about.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">About</a>
+                    <a href="builds.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Builds</a>
+                    <a href="services.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Services</a>
+                    <a href="portfolio.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Portfolio</a>
+                    <a href="garage.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Garage</a>
+                    <a href="contact.html" class="h-9 flex items-center px-2.5 text-gray-700 dark:text-gray-300 hover:text-forge-red transition-colors">Contact</a>
                 </div>
 
                 <!-- Right Action Cluster -->
-                <div class="flex items-center gap-3">
-                    <!-- RTL / LTR Toggle Button (Hidden on Mobile, Visible on Desktop) -->
-                    <button onclick="toggleRTL()" aria-label="Toggle Direction" class="rtl-toggle-btn hidden lg:flex w-9 h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors font-tech text-xs tracking-wider uppercase">
+                <div class="flex items-center gap-2 xl:gap-3 shrink-0">
+                    <!-- RTL / LTR Toggle Button -->
+                    <button onclick="toggleRTL()" aria-label="Toggle Direction" class="rtl-toggle-btn hidden lg:flex w-8 h-8 xl:w-9 xl:h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors font-tech text-xs tracking-wider uppercase">
                         RTL
                     </button>
 
-                    <!-- Dark / Light Mode Toggle (Hidden on Mobile, Visible on Desktop) -->
-                    <button onclick="toggleTheme()" aria-label="Toggle Theme" class="hidden lg:flex w-9 h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors">
+                    <!-- Dark / Light Mode Toggle -->
+                    <button onclick="toggleTheme()" aria-label="Toggle Theme" class="hidden lg:flex w-8 h-8 xl:w-9 xl:h-9 border border-forge-lightBorder dark:border-forge-border bg-gray-100 dark:bg-forge-metal items-center justify-center text-gray-700 dark:text-gray-300 hover:text-forge-red hover:border-forge-red transition-colors">
                         <svg class="w-4 h-4 hidden dark:block text-forge-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                         <svg class="w-4 h-4 block dark:hidden text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                     </button>
 
-                    <!-- Action Button (Hidden on Mobile, Visible on Desktop) -->
-                    <a href="contact.html" class="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 bg-forge-red hover:bg-forge-redHover text-white font-tech font-bold text-sm tracking-wider uppercase chamfer-btn transition-transform shadow-neon-subtle hover:-translate-y-0.5">
+                    <!-- Action Button -->
+                    <a href="contact.html" class="hidden lg:inline-flex items-center gap-1.5 xl:gap-2 px-3 xl:px-5 py-2 xl:py-2.5 bg-forge-red hover:bg-forge-redHover text-white font-tech font-bold text-xs xl:text-sm tracking-wider uppercase chamfer-btn transition-transform shadow-neon-subtle hover:-translate-y-0.5 whitespace-nowrap shrink-0">
                         <span>ENQUIRE</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-3.5 h-3.5 xl:w-4 xl:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
 
                     <!-- Mobile Hamburger Button -->
@@ -223,7 +236,7 @@
                             <span>&bull; Home-1</span>
                             <span class="font-code text-[10px] opacity-75">Racer</span>
                         </a>
-                        <a href="home-2.html" class="flex items-center justify-between px-2.5 py-1.5 text-xs text-gray-900 dark:text-gray-300 hover:bg-forge-red hover:text-white transition-colors">
+                        <a href="home-2.html" class="flex items-center justify-between px-2.5 py-1.5 text-xs bg-forge-red/15 text-forge-red font-bold border-l-2 border-forge-red pl-2.5 transition-colors">
                             <span>&bull; Home-2</span>
                             <span class="font-code text-[10px] opacity-75">Classic</span>
                         </a>
@@ -267,7 +280,7 @@
     <!-- 2. TWO-IN-ONE RESTORATION HERO: SPLIT CONTENT & IMAGE     -->
     <!-- ========================================================= -->
     <main class="flex-grow -mt-20 sm:-mt-24">
-        <section class="relative min-h-screen w-full flex flex-col lg:flex-row overflow-hidden border-b-2 border-forge-border bg-forge-black">
+        <section class="relative min-h-screen w-full flex flex-col lg:flex-row overflow-hidden border-b-2 border-forge-border bg-forge-lightBg dark:bg-black">
             
             <!-- LEFT HALF: RESTORATION EDITORIAL & WORKSHOP SPECS (55%) -->
             <div class="relative w-full lg:w-[55%] z-20 flex flex-col justify-center px-6 sm:px-12 lg:pl-16 lg:pr-20 pt-36 pb-16 bg-forge-black/95 lg:bg-forge-black industrial-grid clip-split-left border-r border-forge-border/40">
@@ -324,7 +337,7 @@
 
             <!-- RIGHT HALF: RESTORATION SHOWCASE WITH FLOATING TELEMETRY (45%) -->
             <div class="relative w-full lg:w-[48%] lg:-ml-[3%] min-h-[460px] lg:min-h-full flex items-end p-6 sm:p-10 lg:p-14 bg-cover bg-center overflow-hidden"
-                 style="background-image: url('img/pp2.webp');">
+                 style="background-image: url('img/hero-norton-commando.jpg');">
                 
                 <!-- Heavy Vignette Scrim -->
                 <div class="absolute inset-0 bg-gradient-to-t from-forge-black via-forge-black/40 to-forge-black/60 lg:bg-gradient-to-l lg:from-transparent lg:via-forge-black/20 lg:to-forge-black"></div>
@@ -377,7 +390,7 @@
  <!-- ========================================================= -->
 <!-- SECTION 1 · BARN-FIND RESCUE PROGRAM                       -->
 <!-- ========================================================= -->
-<section class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-white dark:bg-forge-black relative industrial-grid">
+<section class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-white dark:bg-forge-darkCard relative industrial-grid">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Header -->
@@ -534,7 +547,7 @@
 <!-- ========================================================= -->
 <!-- SECTION 2 · RESTORATION SERVICE TIERS / PACKAGES           -->
 <!-- ========================================================= -->
-<section class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-forge-lightBg dark:bg-forge-darkCard relative industrial-grid">
+<section class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-forge-lightBg dark:bg-black relative industrial-grid">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <div class="inline-flex items-center gap-2 border border-forge-red/40 bg-forge-red/10 px-3 py-1 mb-3">
@@ -617,7 +630,7 @@
 <!-- ========================================================= -->
 <!-- SECTION 3 · RARE PARTS & COMPONENT VAULT                   -->
 <!-- ========================================================= -->
-<section class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-white dark:bg-forge-black relative industrial-grid">
+<section class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-white dark:bg-forge-darkAlt relative industrial-grid">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
@@ -674,7 +687,7 @@
             <!-- Part 4 -->
             <div class="bg-forge-lightBg dark:bg-forge-darkCard border-2 border-gray-300 dark:border-forge-border p-5 hover:border-forge-red hover:-translate-y-1 transition-all">
                 <div class="aspect-square overflow-hidden mb-4 border border-gray-200 dark:border-forge-border">
-                    <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?auto=format&fit=crop&w=500&q=80" alt="Wheels" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1558980394-4c7c9299fe96?auto=format&fit=crop&w=600&q=80" alt="Machined Billet Wheels" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                 </div>
                 <span class="font-code text-[10px] text-forge-red uppercase tracking-wider">REBUILT · SPOKED</span>
                 <h3 class="font-condensed font-bold text-base text-gray-950 dark:text-white uppercase mt-1 mb-2 leading-tight">AKRONT 18" WHEELSET</h3>
@@ -697,7 +710,7 @@
 <!-- ========================================================= -->
 <!-- SECTION 4 · RESTORATION MILESTONES & SHOP STATS            -->
 <!-- ========================================================= -->
-<section class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-forge-black relative industrial-grid">
+<section class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-forge-lightBg dark:bg-black relative industrial-grid">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <div class="inline-flex items-center gap-2 border border-forge-red/40 bg-forge-red/10 px-3 py-1 mb-3">
@@ -844,7 +857,7 @@
 <!-- ========================================================= -->
 <!-- SECTION 6 · WORKSHOP EQUIPMENT & MACHINERY BAY             -->
 <!-- ========================================================= -->
-<section class="py-20 sm:py-28 border-b-2 border-gray-200 dark:border-forge-border bg-white dark:bg-forge-black relative industrial-grid">
+<section class="py-20 sm:py-28 border-b-2 border-forge-red/30 dark:border-forge-red/30 bg-white dark:bg-forge-darkHighlight relative industrial-grid">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
@@ -967,10 +980,21 @@
                 <!-- Col 1: Brand & Credo (4 cols) with Navbar Gear Logo -->
                 <div class="lg:col-span-4">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 sm:w-11 sm:h-11 bg-forge-red flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle">
-                            <svg class="w-6 h-6 transform skew-x-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="3"></circle>
-                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        <div class="w-10 h-10 sm:w-11 sm:h-11 bg-gradient-to-br from-forge-red to-forge-crimson flex items-center justify-center text-white transform -skew-x-6 shadow-neon-subtle border border-white/20">
+                            <svg class="w-6 h-6 sm:w-7 sm:h-7 transform skew-x-6" viewBox="0 0 24 24" fill="none">
+                                <!-- Crossed Con-Rods -->
+                                <path d="M4.5 19.5L19.5 4.5M19.5 19.5L4.5 4.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="4.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <circle cx="19.5" cy="4.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <circle cx="4.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <circle cx="19.5" cy="19.5" r="2" fill="#E51D24" stroke="white" stroke-width="1.5"/>
+                                <!-- Center Forged Piston & Anvil Base -->
+                                <path d="M7.5 6.5H16.5C17.05 6.5 17.5 6.95 17.5 7.5V14C17.5 15 16.5 16 15.5 16H14V19H17L18 20.5H6L7 19H10V16H8.5C7.5 16 6.5 15 6.5 14V7.5C6.5 6.95 6.95 6.5 7.5 6.5Z" fill="white"/>
+                                <!-- Piston Compression Ring Slots -->
+                                <line x1="6.5" y1="8.5" x2="17.5" y2="8.5" stroke="#E51D24" stroke-width="1.1"/>
+                                <line x1="6.5" y1="10.8" x2="17.5" y2="10.8" stroke="#E51D24" stroke-width="1.1"/>
+                                <!-- Wrist Pin Bore -->
+                                <circle cx="12" cy="13.5" r="1.7" fill="#E51D24"/>
                             </svg>
                         </div>
                         <div class="flex flex-col">
